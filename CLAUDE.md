@@ -16,9 +16,9 @@ duomenis Lietuvos VMI metinei pajamų deklaracijai — investicinės sąskaitos 
 - IB bazinė valiuta gali būti USD; visos „Total in USD" reikšmės yra IB konversijos
 - VMI reikalauja sumų EUR
 - EUR/USD kursas imamas iš IB ataskaitos Forex Balances sekcijos (close price periodo pabaigoje)
-- Kiekviena valiutų grupė IB ataskaitoje turi „Total inUSD" suvestinę eilutę
+- Kiekviena valiutų grupė IB ataskaitoje turi „Total inXXX" bazine valiuta suvestinę eilutę
 - **Svarbu**: Forex Balances rodo tik valiutas su grynų pinigų likučiu. Valiutoms, kurios yra tik
-  akcijų pozicijose (pvz. SEK), kursas išvedamas iš „Total" / „Total inUSD" porų Open Positions lentelėje
+  akcijų pozicijose (pvz. SEK), kursas išvedamas iš „Total" / „Total inXXX" porų Open Positions lentelėje
 - Metinė ataskaita NETURI „Base Currency Exchange Rate" sekcijos — ji yra tik dienos ataskaitose
 
 ### VMI CSV formatas
@@ -40,11 +40,10 @@ saskaita,rusis,data,suma,valstybe
 - **IP** = paveldėtos finansinės priemonės
 - **ID** = padovanotos finansinės priemonės
 
-Nenaudojami kodai investicinei sąskaitai: KS, KG, KL, IB, PT, PU, PI
 
 ### Kas laikoma įnašu (II)
 - Piniginiai pervedimai į sąskaitą (Electronic Fund Transfer)
-- **Dividendai** — kiekvienas dividendas yra atskiras II įrašas
+- **Dividendai** — kiekvienas dividendas yra atskiras IV įrašas
 - Kiti piniginiai kreditai (pvz. palūkanų korektimai)
 
 ### Pradinis likutis (IA + IS)
@@ -78,7 +77,7 @@ Nenaudojami kodai investicinei sąskaitai: KS, KG, KL, IB, PT, PU, PI
 ### IB sandorių duomenų struktūra
 - Sandoriai grupuojami pagal turto klasę (Stocks, Equity and Index Options, Forex)
 - Kiekvienoje turto klasėje — pagal valiutą (CHF, EUR, NOK, USD ir t.t.)
-- Suvestinės eilutės: `Total<Symbol>`, `Total`, `Total inUSD`
+- Suvestinės eilutės: `Total<Symbol>`, `Total`, `Total inXXX`
 - Kodai: O=Atidarymas, C=Uždarymas, A=Priskyrimas, Ex=Įvykdymas, Ep=Pasibaigęs, P=Dalinis ir t.t.
 
 ## Rezultatų failai
